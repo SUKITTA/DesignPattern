@@ -1,4 +1,4 @@
-package ducks;
+package poultry;
 
 import quack.Quackable;
 

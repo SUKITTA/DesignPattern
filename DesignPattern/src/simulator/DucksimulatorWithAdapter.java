@@ -6,10 +6,10 @@ import poultry.*;
 import quack.Quackable;
 
 
-public class Ducksimulator {
+public class DucksimulatorWithAdapter {
 
     public static void main(String[] args) {
-        Ducksimulator simulator = new Ducksimulator();
+        DucksimulatorWithAdapter simulator = new DucksimulatorWithAdapter();
         simulator.simulate();
     }
     void simulate() {
@@ -17,13 +17,17 @@ public class Ducksimulator {
         Quackable redheadDuck = new RedHeadDuck();
         Quackable duckCall = new DuckCall();
         Quackable rubberDuck = new RubberDuck();
-        System.out.println("\nDuck Simulator");
+        Quackable gooseDuck = new GooseAdapter(new Goose());
+        Quackable pigeon = new PigeonAdapter(new Pigeon());
+        System.out.println("\nDuck Simulator : With Adapter");
 
 
         simulate(mallardDuck);
         simulate(redheadDuck);
         simulate(duckCall);
         simulate(rubberDuck);
+        simulate(gooseDuck);
+        simulate(pigeon);
 
     }
     void simulate(Quackable duck) {
